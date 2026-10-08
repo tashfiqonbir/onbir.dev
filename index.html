@@ -3,49 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TASHFIQ ONBIR | CYBER DEV</title>
+<title>TASHFIQ ONBIR | MATRIX</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&family=Rajdhani:wght@500&display=swap');
-  
     * { margin: 0; padding: 0; box-sizing: border-box; }
-  
-  body {
-    background: #000;
-    color: #00ff00;
-    font-family: 'Rajdhani', sans-serif;
-    overflow-x: hidden;
-    position: relative;
-  }
+  body { background: #000; color: #00ff00; font-family: 'Rajdhani', sans-serif; overflow-x: hidden; position: relative; }
+  canvas { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.25; } /* MATRIX BG BACK */
 
-  /* MATRIX GLITCH BG - RED GREEN WHITE BLACK */
-  canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 0.3;
-  }
+.glow-red { text-shadow: 0 0 10px #ff0000; }
+.glow-green { text-shadow: 0 0 10px #00ff00; }
+.glow-white { text-shadow: 0 0 10px #ffffff; }
 
- .glow-red { text-shadow: 0 0 10px #ff0000; }
- .glow-green { text-shadow: 0 0 10px #00ff00; }
- .glow-white { text-shadow: 0 0 10px #ffffff; }
+.container { max-width: 900px; margin: 0 auto; padding: 60px 20px; text-align: center; position: relative; z-index: 1; }
 
- .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 4em;
-    color: #ffffff;
-    animation: glitch 2s infinite;
-    margin-bottom: 10px;
-  }
+  h1 { font-family: 'Orbitron', sans-serif; font-size: 4em; color: #ffffff; animation: glitch 2s infinite; margin-bottom: 10px; } /* GLITCH BACK */
   @keyframes glitch {
     0% { text-shadow: 2px 0 #ff0000, -2px 0 #00ff00; }
     25% { text-shadow: -2px 0 #ff0000, 2px 0 #00ff00; }
@@ -53,80 +24,41 @@
     100% { text-shadow: -2px 0 #00ff00, 2px 0 #ffffff; }
   }
 
- .subtitle {
-    color: #00ff00;
-    font-size: 1.2em;
-    margin-bottom: 50px;
-    letter-spacing: 3px;
-  }
+.subtitle { color: #00ff00; font-size: 1.2em; margin-bottom: 50px; letter-spacing: 3px; min-height: 25px; }
 
- .card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid #ff0000;
-    border-radius: 15px;
-    padding: 30px;
-    margin: 30px 0;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 0 30px rgba(255,0,0,0.2);
-    transition: 0.4s;
-  }
- .card:hover {
-    border-color: #00ff00;
-    box-shadow: 0 0 40px rgba(0,255,0,0.4);
-    transform: translateY(-5px);
-  }
- .card h2 { 
-    color: #ffffff; 
-    border-bottom: 2px solid #ff0000; 
-    padding-bottom: 10px; 
-    margin-bottom: 20px;
-    font-family: 'Orbitron', sans-serif;
-  }
-  
- .btn-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
- .btn {
-    background: linear-gradient(90deg, #ff0000, #00ff00);
-    color: #000;
-    padding: 18px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: 900;
-    font-family: 'Orbitron', sans-serif;
-    transition: 0.3s;
-    border: 2px solid transparent;
-  }
- .btn:hover {
-    background: #fff;
-    color: #000;
-    box-shadow: 0 0 25px #ffffff;
-    transform: scale(1.05);
-  }
+.card { background: rgba(0, 0, 0, 0.7); border: 1px solid #00ff00; border-radius: 15px; padding: 30px; margin: 30px 0; backdrop-filter: blur(15px); box-shadow: 0 0 30px rgba(0,255,0,0.2); transition: 0.4s; }
+.card:hover { border-color: #ff0000; box-shadow: 0 0 40px rgba(255,0,0,0.4); transform: translateY(-5px); }
+.card h2 { color: #ffffff; border-bottom: 2px solid #00ff00; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Orbitron', sans-serif; }
 
- .footer {
-    color: #555;
-    margin-top: 60px;
-    font-size: 0.9em;
-  }
+.btn-group { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.btn { background: linear-gradient(90deg, #00ff00, #ff0000); color: #000; padding: 18px; text-decoration: none; border-radius: 10px; font-weight: 900; font-family: 'Orbitron', sans-serif; transition: 0.3s; border: 2px solid transparent; cursor:pointer; }
+.btn:hover { background: #fff; color: #000; box-shadow: 0 0 25px #ffffff; transform: scale(1.05); }
 
-  /* Responsive */
-  @media(max-width: 600px) {
-    h1 { font-size: 2.5em; }
-   .btn-group { grid-template-columns: 1fr; }
-  }
+.skill-bar { text-align: left; margin: 10px 0; font-size: 1.1em; }
+.skill-bar span { color:#00ff00; float: right; }
+.counter { color:#ff0000; font-size:1.3em; font-family:'Orbitron'; }
+
+.music-btn { position: fixed; bottom: 20px; right: 20px; z-index: 10; background:#00ff00; color:#000; border:none; padding:12px 16px; border-radius:50%; font-size:22px; box-shadow: 0 0 20px #00ff00; cursor: pointer; animation: pulse 2s infinite; }
+ @keyframes pulse { 0% {box-shadow: 0 0 0 0 rgba(0,255,0,0.7);} 70% {box-shadow: 0 0 0 15px rgba(0,255,0,0);} 100% {box-shadow: 0 0 0 0 rgba(0,255,0,0);} } /* Button glow */
+.music-btn:active { transform: scale(0.9); }
+
+.footer { color: #555; margin-top: 60px; font-size: 0.9em; }
+  @media(max-width: 600px) { h1 { font-size: 2.5em; }.btn-group { grid-template-columns: 1fr; }.card { padding: 20px; } }
 </style>
 </head>
 <body>
 
-<canvas id="matrix"></canvas>
+<canvas id="matrix"></canvas> <!-- MATRIX CANVAS BACK -->
+<button class="music-btn" onclick="toggleMusic()">🔇</button>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2024/11/27/audio_2d3e4f5a6b.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container">
   <h1 class="glow-white">TASHFIQ ONBIR</h1>
-  <p class="subtitle glow-green">> CYBER DEVELOPER // TERMUX HACKER //</p>
-  
+  <p class="subtitle glow-green"></p>
+
   <div class="card">
     <h2 class="glow-red">> ABOUT_ME.exe</h2>
     <p style="font-size:1.1em; line-height:1.8;">
@@ -138,52 +70,98 @@
   </div>
 
   <div class="card">
+    <h2 class="glow-red">> SKILLS.exe</h2>
+    <div class="skill-bar">PYTHON <span>████████░░ 90%</span></div>
+    <div class="skill-bar">TERMUX <span>███████░░░ 80%</span></div>
+    <div class="skill-bar">HTML/CSS <span>██████░░░░ 70%</span></div>
+    <div class="skill-bar">CYBER SEC <span>█████░░░░░ 60%</span></div>
+  </div>
+
+  <!-- PROJECT HIDDEN -->
+  <!--
+  <div class="card">
+    <h2 class="glow-red">> MY_TOOLS</h2>
+    <a href="https://github.com/tashfiqonbir/cyber-dino-termux" class="btn" target="_blank" rel="noopener">> RUN CYBER_DINO.exe</a>
+  </div>
+  -->
+
+  <div class="card">
     <h2 class="glow-red">> CONNECT</h2>
     <div class="btn-group">
-      <a href="https://facebook.com/onbir.official" class="btn" target="_blank">FACEBOOK</a>
-      <a href="https://instagram.com/tashfiqonbir" class="btn" target="_blank">INSTAGRAM</a>
-      <a href="https://github.com/tashfiqonbir" class="btn" target="_blank">GITHUB</a>
-      <a href="https://t.me/anonymous_duplicate" class="btn" target="_blank">TELEGRAM</a>
+      <a href="https://facebook.com/onbir.official" class="btn" target="_blank" rel="noopener">FACEBOOK</a>
+      <a href="https://instagram.com/tashfiqonbir" class="btn" target="_blank" rel="noopener">INSTAGRAM</a>
+      <a href="https://github.com/tashfiqonbir" class="btn" target="_blank" rel="noopener">GITHUB</a>
+      <a href="https://t.me/anonymous_duplicate" class="btn" target="_blank" rel="noopener">TELEGRAM</a>
     </div>
   </div>
 
-  <p class="footer">> SYSTEM v2.0 | 2026 | POWERED BY MATRIX</p>
+  <div class="card">
+    <h2 class="glow-red">> SYSTEM_INFO</h2>
+    <p>> VISITORS: <span id="visitor" class="counter">1024</span></p>
+    <p>> UPTIME: <span id="uptime" class="counter">00:00:00</span></p>
+  </div>
+
+  <p class="footer">> SYSTEM v2.7 | MATRIX MODE | CLICK 🔊 FOR MUSIC</p>
 </div>
 
 <script>
-  // MATRIX GLITCH CANVAS - RED GREEN WHITE BLACK
+  // 1. TYPING EFFECT
+  const subtitle = document.querySelector('.subtitle');
+  const text = "> CYBER DEVELOPER // TERMUX HACKER //";
+  let i = 0;
+  function type() {
+    if(i < text.length){ subtitle.innerHTML += text.charAt(i); i++; setTimeout(type, 80); }
+  }
+  window.onload = type;
+
+  // 2. MATRIX BG BACK
   const canvas = document.getElementById('matrix');
   const ctx = canvas.getContext('2d');
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-  
+  function resizeCanvas() { canvas.height = window.innerHeight; canvas.width = window.innerWidth; }
+  resizeCanvas(); window.addEventListener('resize', resizeCanvas);
   const letters = '01アイウエオカキクケコ';
   const colors = ['#ff0000', '#00ff00', '#ffffff'];
-  const fontSize = 14;
-  const columns = canvas.width / fontSize;
-  const drops = Array(Math.floor(columns)).fill(1);
-  
+  const fontSize = 14; let columns = Math.floor(canvas.width / fontSize);
+  let drops = Array(columns).fill(1);
   function draw() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
     for(let i = 0; i < drops.length; i++) {
       const text = letters[Math.floor(Math.random()*letters.length)];
       ctx.fillStyle = colors[Math.floor(Math.random()*colors.length)];
-      ctx.font = fontSize + 'px monospace';
-      ctx.fillText(text, i*fontSize, drops[i]*fontSize);
-      
-      if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
-        drops[i] = 0;
-      drops[i]++;
+      ctx.font = fontSize + 'px monospace'; ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+      if(drops[i]*fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0; drops[i]++;
     }
   }
   setInterval(draw, 33);
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-</script>
 
+  // 3. MUSIC TOGGLE - FIX
+  const bgm = document.getElementById('bgm');
+  let isPlaying = false;
+  function toggleMusic(){
+    if(isPlaying){
+      bgm.pause();
+      isPlaying=false;
+      document.querySelector('.music-btn').innerText='🔇';
+      document.querySelector('.music-btn').style.animation='pulse 2s infinite';
+    } else {
+      bgm.play().catch(e=>alert("Music play করতে 🔊 button এ click করুন")); // Error catch
+      isPlaying=true;
+      document.querySelector('.music-btn').innerText='🔊';
+      document.querySelector('.music-btn').style.animation='none';
+    }
+  }
+
+  // 4. FAKE VISITOR COUNTER
+  function getRandomBase() { return Math.floor(Math.random() * 500) + 1000; }
+  let visitors = localStorage.getItem('visitors');
+  if(!visitors) { visitors = getRandomBase(); } else { visitors = parseInt(visitors); }
+  visitors += Math.floor(Math.random() * 3) + 1;
+  localStorage.setItem('visitors', visitors);
+  document.getElementById('visitor').innerText = String(visitors).padStart(4,'0');
+  setInterval(()=>{ visitors += Math.floor(Math.random() * 2); localStorage.setItem('visitors', visitors); document.getElementById('visitor').innerText = String(visitors).padStart(4,'0'); },60000);
+
+  // 5. UPTIME COUNTER
+  let sec=0; setInterval(()=>{ sec++; let h=String(Math.floor(sec/3600)).padStart(2,'0'); let m=String(Math.floor(sec%3600/60)).padStart(2,'0'); let s=String(sec%60).padStart(2,'0'); document.getElementById('uptime').innerText=`${h}:${m}:${s}` },1000);
+</script>
 </body>
-      </html>
+  </html>
