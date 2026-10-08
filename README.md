@@ -10,7 +10,6 @@
 ---
 
 ### 👨‍💻 ABOUT ME
-আমি Tashfiq Onbir। Kaliganj, Dhaka থেকে। 
 Python, Termux, আর Cyber Security নিয়ে কাজ করি। 
 Mission: সবার জন্য সহজ Tech বানানো 🦖
 
