@@ -17,8 +17,7 @@ Mission: সবার জন্য সহজ Tech বানানো 🦖
 ### 🚀 MY PROJECTS
 | Project | Description | Link |
 | --- | --- | --- |
-| **CYBER DINO** | Termux এর জন্য Chrome Dino Game | [PLAY](https://github.com/tashfiqonbir/cyber-dino-termux) |
-| **PORTFOLIO** | This Cyberpunk Website | [LIVE](https://tashfiqonbir.github.io/cyber-onbir/) |
+| **PORTFOLIO** | This Cyberpunk Website | [LIVE](https://tashfiqonbir.github.io/onbir.dev/) |
 
 ### 📡 CONNECT WITH ME
 - **Facebook**: [facebook.com/onbir.official](https://facebook.com/onbir.official)
