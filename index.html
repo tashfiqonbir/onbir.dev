@@ -5,120 +5,185 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TASHFIQ ONBIR | CYBER DEV</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&family=Rajdhani:wght@500&display=swap');
+  
+    * { margin: 0; padding: 0; box-sizing: border-box; }
   
   body {
-    background: #050510;
-    background-image: 
-      radial-gradient(circle at 20% 50%, rgba(0,255,234,0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255,0,255,0.1) 0%, transparent 50%),
-      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><path d="M0 50 L100 50 M50 0 L50 100" stroke="%2300ffea" stroke-width="0.5" opacity="0.1"/></svg>');
-    color: #00ffea;
-    font-family: 'Orbitron', sans-serif;
-    margin: 0;
-    padding: 40px 20px;
+    background: #000;
+    color: #00ff00;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+    position: relative;
   }
-  .glow-text {
-    text-shadow: 0 0 5px #00ffea, 0 0 20px #00ffea, 0 0 40px #ff00ff;
-    animation: flicker 3s infinite;
+
+  /* MATRIX GLITCH BG - RED GREEN WHITE BLACK */
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.3;
   }
-  @keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-  }
-  h1 {
-    font-size: 4em;
-    text-align: center;
-    color: #00ffea;
-    border: 2px solid #00ffea;
-    padding: 20px;
-    display: inline-block;
-    margin: 0 auto 40px;
-    box-shadow: 0 0 30px #00ffea;
-  }
-  .header { text-align: center; }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
+
+ .glow-red { text-shadow: 0 0 10px #ff0000; }
+ .glow-green { text-shadow: 0 0 10px #00ff00; }
+ .glow-white { text-shadow: 0 0 10px #ffffff; }
+
+ .container {
+    max-width: 900px;
     margin: 0 auto;
-  }
-  .card {
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid #ff00ff;
-    border-radius: 15px;
-    padding: 25px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(255,0,255,0.3);
-    transition: 0.3s;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 40px rgba(0,255,234,0.5);
-  }
-  .card h2 { color: #ff00ff; border-bottom: 1px solid #00ffea; padding-bottom: 10px; }
-  
-  .btn {
-    display: block;
-    background: linear-gradient(90deg, #ff00ff, #00ffea);
-    color: #000;
-    padding: 15px;
-    margin: 12px 0;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 900;
+    padding: 60px 20px;
     text-align: center;
-    transition: 0.3s;
+    position: relative;
+    z-index: 1;
   }
-  .btn:hover {
-    box-shadow: 0 0 25px #00ffea;
+
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4em;
+    color: #ffffff;
+    animation: glitch 2s infinite;
+    margin-bottom: 10px;
+  }
+  @keyframes glitch {
+    0% { text-shadow: 2px 0 #ff0000, -2px 0 #00ff00; }
+    25% { text-shadow: -2px 0 #ff0000, 2px 0 #00ff00; }
+    50% { text-shadow: 2px 0 #ffffff, -2px 0 #ff0000; }
+    100% { text-shadow: -2px 0 #00ff00, 2px 0 #ffffff; }
+  }
+
+ .subtitle {
+    color: #00ff00;
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+  }
+
+ .card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ff0000;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(255,0,0,0.2);
+    transition: 0.4s;
+  }
+ .card:hover {
+    border-color: #00ff00;
+    box-shadow: 0 0 40px rgba(0,255,0,0.4);
+    transform: translateY(-5px);
+  }
+ .card h2 { 
+    color: #ffffff; 
+    border-bottom: 2px solid #ff0000; 
+    padding-bottom: 10px; 
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+ .btn-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+ .btn {
+    background: linear-gradient(90deg, #ff0000, #00ff00);
+    color: #000;
+    padding: 18px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+    border: 2px solid transparent;
+  }
+ .btn:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 25px #ffffff;
     transform: scale(1.05);
   }
-  .project-img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #00ffea;
+
+ .footer {
+    color: #555;
+    margin-top: 60px;
+    font-size: 0.9em;
+  }
+
+  /* Responsive */
+  @media(max-width: 600px) {
+    h1 { font-size: 2.5em; }
+   .btn-group { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1 class="glow-text">TASHFIQ<br>ONBIR</h1>
-</div>
+<canvas id="matrix"></canvas>
 
-<div class="grid">
+<div class="container">
+  <h1 class="glow-white">TASHFIQ ONBIR</h1>
+  <p class="subtitle glow-green">> CYBER DEVELOPER // TERMUX HACKER //</p>
   
   <div class="card">
-    <h2>> ABOUT_ME.exe</h2>
-    <p>> Location: Kaliganj, Dhaka, BD</p>
-    <p>> Role: Cyber Developer / Termux Hacker</p>
-    <p>> Passion: Python, Game Dev, Cyber Security</p>
-    <p>> Status: <span style="color:#00ff00;">ONLINE</span></p>
+    <h2 class="glow-red">> ABOUT_ME.exe</h2>
+    <p style="font-size:1.1em; line-height:1.8;">
+    > Role: Python Developer & Cyber Security Enthusiast<br>
+    > Passion: Termux, Game Dev, Automation<br>
+    > Mission: Building tools for everyone<br>
+    > Status: <span style="color:#00ff00;">SYSTEM ONLINE</span>
+    </p>
   </div>
 
   <div class="card">
-    <h2>> MY_PROJECTS</h2>
-    <img src="https://via.placeholder.com/300x200/0a0a0a/00ffea?text=CYBER+DINO" class="project-img" alt="Cyber Dino">
-    <h3 style="color:#ff00ff;">CYBER DINO</h3>
-    <p>Termux এর জন্য Chrome Dino Clone. Python + Emoji 🦖🌵</p>
-    <a href="https://github.com/tashfiqonbir/cyber-dino-termux" class="btn">PLAY NOW</a>
+    <h2 class="glow-red">> CONNECT</h2>
+    <div class="btn-group">
+      <a href="https://facebook.com/onbir.official" class="btn" target="_blank">FACEBOOK</a>
+      <a href="https://instagram.com/tashfiqonbir" class="btn" target="_blank">INSTAGRAM</a>
+      <a href="https://github.com/tashfiqonbir" class="btn" target="_blank">GITHUB</a>
+      <a href="https://t.me/anonymous_duplicate" class="btn" target="_blank">TELEGRAM</a>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>> CONNECT</h2>
-    <p>PINNED LINKS:</p>
-    <a href="https://facebook.com/onbir.official" class="btn" target="_blank">FACEBOOK</a>
-    <a href="https://instagram.com/tashfiqonbir" class="btn" target="_blank">INSTAGRAM</a>
-    <a href="https://github.com/tashfiqonbir" class="btn" target="_blank">GITHUB</a>
-    <a href="https://t.me/anonymous_duplicate" class="btn" target="_blank">TELEGRAM</a>
-  </div>
-
+  <p class="footer">> SYSTEM v2.0 | 2026 | POWERED BY MATRIX</p>
 </div>
 
-<p style="text-align:center; color:#555; margin-top:50px;">> SYSTEM ONLINE | 2026 | POWERED BY CYBERPUNK</p>
+<script>
+  // MATRIX GLITCH CANVAS - RED GREEN WHITE BLACK
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  
+  const letters = '01アイウエオカキクケコ';
+  const colors = ['#ff0000', '#00ff00', '#ffffff'];
+  const fontSize = 14;
+  const columns = canvas.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+  
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    for(let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random()*letters.length)];
+      ctx.fillStyle = colors[Math.floor(Math.random()*colors.length)];
+      ctx.font = fontSize + 'px monospace';
+      ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+      
+      if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
+        drops[i] = 0;
+      drops[i]++;
+    }
+  }
+  setInterval(draw, 33);
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
 
 </body>
-</html>
+      </html>
