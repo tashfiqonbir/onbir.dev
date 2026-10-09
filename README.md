@@ -18,11 +18,6 @@ Mission: সবার জন্য সহজ Tech বানানো 🦖
 | --- | --- | --- |
 | **PORTFOLIO** | This Cyberpunk Website | [LIVE](https://tashfiqonbir.github.io/onbir.dev/) |
 
-### 📡 CONNECT WITH ME
-- **Facebook**: [facebook.com/onbir.official](https://facebook.com/onbir.official)
-- **Instagram**: [instagram.com/tashfiqonbir](https://instagram.com/tashfiqonbir)
-- **GitHub**: [github.com/tashfiqonbir](https://github.com/tashfiqonbir)
-- **Telegram**: [t.me/anonymous_duplicate](https://t.me/anonymous_duplicate)
 
 ### 🛠️ TECH STACK
 `HTML5` `CSS3` `JavaScript` `Python` `Termux`
